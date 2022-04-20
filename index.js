@@ -27,7 +27,7 @@ app.get('/holiday',(req,res)=>{
 app.get('/is-today-holiday',(req,res)=>{
     const hoje = new Date();
     console.log(hoje.toLocaleDateString());
-    const hojeFormatado = hoje.toLocaleDateString();
+    const hojeFormatado = hoje.toLocaleDateString('em-US');
     const isHoliday = holidays.find(holiday => holiday.date === hojeFormatado);
     if(isHoliday){
         res.send('Sim, hoje é nome-do-feriado')
